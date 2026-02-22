@@ -116,21 +116,21 @@ const Terminal = () => {
             <p>
               Email:{" "}
               <a
-                href="mailto:varaprasad@example.com"
+                href="mailto:pappuridurgavaraprasad4pl@gmail.com"
                 className="text-blue-400 hover:underline"
               >
-                varaprasad@example.com
+                pappuridurgavaraprasad4pl@gmail.com
               </a>
             </p>
             <p>
               LinkedIn:{" "}
               <a
-                href="https://linkedin.com/in/varaprasad"
+                href="https://www.linkedin.com/in/durga-vara-prasad-pappuri-1797701b6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:underline"
               >
-                linkedin.com/in/varaprasad
+                https://www.linkedin.com/in/durga-vara-prasad-pappuri-1797701b6/
               </a>
             </p>
             <p>
