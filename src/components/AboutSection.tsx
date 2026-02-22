@@ -13,12 +13,18 @@ const AboutSection = () => (
           power of minimal design and well-crafted code to communicate ideas
           effectively.
         </p>
-        <p className="body-text max-w-2xl mt-6 mb-8">
+        <p className="body-text max-w-2xl mt-6">
           With experience across mobile and web platforms, I bring a unique
           perspective to every project — blending technical rigor with creative
           sensibility.
         </p>
-
+        <p className="body-text max-w-2xl mt-6 mb-8">
+          I embrace the philosophy of <strong>vibe coding</strong>—a modern
+          development approach where technical precision meets creative
+          intuition. By blending AI-assisted tools with a strong design
+          aesthetic, I rapidly translate ideas into fluid, highly polished
+          digital experiences while maintaining clean and scalable architecture.
+        </p>
         <a
           href="https://durgavaraprasad.hashnode.dev/"
           target="_blank"
