@@ -329,7 +329,7 @@ const Terminal = () => {
   if (!isOpen) {
     return (
       <div className="fixed bottom-6 right-6 z-50 group">
-        <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+        <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-white text-[10px] rounded-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
           {window.innerWidth > 768 ? 'Ctrl + K' : 'Terminal'}
         </div>
         <button
@@ -338,7 +338,7 @@ const Terminal = () => {
             setIsOpen(true);
           }}
           onTouchStart={playTerminalOpen}
-          className="p-3 bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all duration-300 active:scale-95 rounded-xl"
+          className="p-3 bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all duration-300 active:scale-95 rounded-none"
           aria-label="Open Terminal"
         >
           <TerminalIcon className="w-5 h-5" />
@@ -356,29 +356,29 @@ const Terminal = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className={`bg-[#0c0c0c] border border-white/20 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] w-full transition-all duration-300 flex flex-col font-mono text-sm md:text-base selection:bg-white/20 active:border-white/40 rounded-xl overflow-hidden ${
+        className={`bg-[#0c0c0c] border border-white/20 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] w-full transition-all duration-300 flex flex-col font-mono text-sm md:text-base selection:bg-white/20 active:border-white/40 rounded-none overflow-hidden ${
           isMaximized ? 'h-[95vh] w-[95vw]' : 'max-w-2xl h-[600px]'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Drag indicator for mobile */}
-        <div className="md:hidden w-12 h-1.5 bg-white/20 rounded-full mx-auto mt-2" />
+        <div className="md:hidden w-12 h-1.5 bg-white/20 rounded-none mx-auto mt-2" />
 
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-2 border-b border-white/10 bg-[#1a1a1a]">
           <div className="flex items-center gap-2">
             <div
-              className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 cursor-pointer active:scale-90 transition-transform"
+              className="w-3 h-3 rounded-none bg-red-500 hover:bg-red-600 cursor-pointer active:scale-90 transition-transform"
               onClick={() => {
                 playTerminalClose();
                 setIsOpen(false);
               }}
             />
             <div
-              className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 cursor-pointer active:scale-90 transition-transform"
+              className="w-3 h-3 rounded-none bg-yellow-500 hover:bg-yellow-600 cursor-pointer active:scale-90 transition-transform"
               onClick={() => setIsMaximized(!isMaximized)}
             />
-            <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 cursor-pointer" />
+            <div className="w-3 h-3 rounded-none bg-green-500 hover:bg-green-600 cursor-pointer" />
             <span className="ml-2 text-white/60 text-xs">
               guest@vara-portfolio:~
             </span>

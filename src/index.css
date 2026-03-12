@@ -34,7 +34,7 @@
     --input: 0 0% 20%;
     --ring: 0 0% 5%;
 
-    --radius: 16px;
+    --radius: 0px;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 20%;
@@ -97,7 +97,7 @@
   }
 
   .nav-link {
-    @apply uppercase text-sm tracking-[0.2em] text-foreground hover:text-foreground/70 font-medium transition-colors duration-300;
+    @apply uppercase text-xs tracking-[0.2em] text-foreground hover:text-foreground/70 font-medium transition-colors duration-300;
   }
 
   .fade-in {

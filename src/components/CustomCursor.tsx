@@ -63,7 +63,7 @@ const CustomCursor = () => {
     >
       {/* Outer Square */}
       <div
-        className={`absolute -translate-x-1/2 -translate-y-1/2 border-2 border-black bg-white transition-all duration-200 ease-out rounded-lg ${
+        className={`absolute -translate-x-1/2 -translate-y-1/2 border-2 border-black bg-white transition-all duration-200 ease-out rounded-none ${
           isHovering ? 'w-10 h-10 rotate-45 bg-black' : 'w-6 h-6 rotate-0'
         } ${isClicking ? 'scale-75' : 'scale-100'}`}
         style={{
@@ -77,7 +77,7 @@ const CustomCursor = () => {
           isHovering ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <div className="w-1 h-1 bg-black rounded-full" />
+        <div className="w-1 h-1 bg-black rounded-none" />
       </div>
 
       {/* Hover "Plus" sign inside when hovering */}

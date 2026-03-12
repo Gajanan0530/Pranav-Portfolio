@@ -74,7 +74,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-link text-base tracking-[0.3em] active:scale-95 transition-transform"
+                className="nav-link text-sm tracking-[0.3em] active:scale-95 transition-transform"
                 onClick={() => {
                   playClick();
                   setOpen(false);
