@@ -25,6 +25,9 @@ const Terminal = () => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [terminalTheme, setTerminalTheme] = useState('text-white/90');
   const [input, setInput] = useState('');
+  const [gameMode, setGameMode] = useState(false);
+  const [targetNumber, setTargetNumber] = useState(0);
+  const [attempts, setAttempts] = useState(0);
   const [history, setHistory] = useState<CommandOutput[]>([
     {
       id: 0,
@@ -99,6 +102,8 @@ const Terminal = () => {
             <span>How to reach me</span>
             <span className="text-green-400">theme [t]</span>{' '}
             <span>Change theme (green, amber, white)</span>
+            <span className="text-green-400">play</span>{' '}
+            <span>Play a minigame</span>
             <span className="text-green-400">clear</span>{' '}
             <span>Clear the terminal</span>
             <span className="text-green-400">exit</span>{' '}
@@ -234,15 +239,84 @@ const Terminal = () => {
       {
         id: Date.now(),
         type: 'command',
-        content: `guest@portfolio:~$ ${cmd}`,
+        content: `${gameMode ? 'game@portfolio:~$' : 'guest@portfolio:~$' } ${cmd}`,
       },
     ];
+
+    if (gameMode) {
+      const num = parseInt(trimmedCmd);
+      if (trimmedCmd.toLowerCase() === 'exit' || trimmedCmd.toLowerCase() === 'quit') {
+        setGameMode(false);
+        newHistory.push({
+          id: Date.now() + 1,
+          type: 'response',
+          content: <span className="text-yellow-400">Exited game mode.</span>
+        });
+        playTerminalClose();
+      } else if (isNaN(num)) {
+        newHistory.push({
+          id: Date.now() + 1,
+          type: 'error',
+          content: <span className="text-red-400">Please enter a valid number, or type 'exit' to quit.</span>
+        });
+        playError();
+      } else {
+        const newAttempts = attempts + 1;
+        setAttempts(newAttempts);
+        if (num === targetNumber) {
+          setGameMode(false);
+          newHistory.push({
+            id: Date.now() + 1,
+            type: 'response',
+            content: <span className="text-green-400">🎉 Correct! You guessed the number {targetNumber} in {newAttempts} attempts!</span>
+          });
+          playSuccess();
+        } else if (num < targetNumber) {
+          newHistory.push({
+            id: Date.now() + 1,
+            type: 'response',
+            content: <span className="text-blue-400">Too low! Try a higher number.</span>
+          });
+          playKeyTick();
+        } else {
+          newHistory.push({
+            id: Date.now() + 1,
+            type: 'response',
+            content: <span className="text-blue-400">Too high! Try a lower number.</span>
+          });
+          playKeyTick();
+        }
+      }
+      setHistory(newHistory);
+      return;
+    }
 
     const [cmdName, ...args] = trimmedCmd.toLowerCase().split(' ');
 
     if (cmdName === 'clear') {
       playClick();
       setHistory([]);
+      return;
+    }
+
+    if (cmdName === 'play') {
+      const generatedNumber = Math.floor(Math.random() * 100) + 1;
+      setTargetNumber(generatedNumber);
+      setAttempts(0);
+      setGameMode(true);
+      newHistory.push({
+        id: Date.now() + 1,
+        type: 'response',
+        content: (
+           <div className="text-yellow-400">
+             <p>🎮 <b>Number Guessing Game Started!</b> 🎮</p>
+             <p>I have picked a number between 1 and 100.</p>
+             <p>Enter your guess below, or type 'exit' to quit.</p>
+           </div>
+        )
+      });
+      playSuccess();
+      setHistory(newHistory);
       return;
     }
 
@@ -418,7 +492,7 @@ const Terminal = () => {
           ))}
 
           <form onSubmit={handleSubmit} className="flex items-center gap-2">
-            <span className="text-green-400 shrink-0">guest@portfolio:~$</span>
+            <span className="text-green-400 shrink-0">{gameMode ? 'game@portfolio:~$' : 'guest@portfolio:~$' }</span>
             <input
               ref={inputRef}
               type="text"
