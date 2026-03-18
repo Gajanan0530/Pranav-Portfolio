@@ -6,8 +6,29 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 
 const projects = [
   {
-    title: 'AI Voice Editor',
+    title: 'Lakshmi Fashion Designers',
     isNew: true,
+    description:
+      'A premium e-commerce portal for a modern tailoring and fancy store, featuring multi-language support (English & Telugu) and AI-powered product collections.',
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind',
+      'Node.js',
+      'Express',
+      'Supabase',
+      'Python',
+      'FastAPI',
+      'Framer Motion',
+      'i18n',
+    ],
+    githubUrl:
+      'https://github.com/VARA4u-tech/Lakshmi-Fashion-Designers-E-Commerce-Website',
+    liveUrl:
+      'https://github.com/VARA4u-tech/Lakshmi-Fashion-Designers-E-Commerce-Website',
+  },
+  {
+    title: 'AI Voice Editor',
     description:
       'AI-driven document editor that uses real-time voice commands to edit and reshape text.',
     tags: [
