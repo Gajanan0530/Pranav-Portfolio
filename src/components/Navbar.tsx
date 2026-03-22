@@ -5,10 +5,8 @@ import SoundToggle from './SoundToggle';
 const links = [
   { label: 'About', href: '#about' },
   { label: 'Education', href: '#education' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#projects' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Blog', href: '#blog' },
   { label: 'Contact', href: '#contact' },
 ];
 

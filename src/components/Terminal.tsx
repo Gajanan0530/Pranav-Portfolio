@@ -39,7 +39,7 @@ const Terminal = () => {
       type: 'response',
       content: (
         <div className="mb-2">
-          <p>Welcome to Vara's Portfolio Terminal v1.0.0</p>
+          <p>Welcome to Pranav's Portfolio Terminal v1.0.0</p>
           <p>
             I am a conversational AI. Type{' '}
             <span className="text-green-400">help</span> for commands, or just
@@ -127,23 +127,23 @@ const Terminal = () => {
             </div>
           );
         case 'cat readme.md':
-          return "Vara's Portfolio v1.0.0. Built with React, TypeScript, and a reckless amount of neobrutalism.";
+          return "Pranav's Portfolio v1.0.0. Built with React, TypeScript, and a reckless amount of neobrutalism.";
         case 'cat experience.txt':
-          return 'Freelance Developer @ AOTMS. Built scalable transport systems and loved every second of it.';
+          return 'QA Test Engineer with 2 years of experience in software testing and quality assurance. Specialized in automation testing and test strategy development.';
         case 'cat education.txt':
-          return 'Currently exploring the depths of CSE, specializing in Blockchain and AI.';
+          return 'B.Tech Computer Science (2023-2027) at Lovely Professional University. Building strong foundations in software engineering with focus on quality and testing.';
         case 'cat roadmap.sh':
-          return 'Next up: Master Aptos Move, scale AI Voice Editor, and keep vibe coding.';
+          return 'Next up: Master advanced automation frameworks, pursue Test Architect certification, and build comprehensive QA strategies for enterprise applications.';
         case 'about':
-          return `I'm ${PROFILE.name}, a passionate developer specializing in Flutter, React, and Blockchain technologies. I love building modern, high-performance applications.`;
+          return `I'm ${PROFILE.name}, a dedicated QA Test Engineer and Automation Tester specializing in software quality assurance. I excel at creating comprehensive testing strategies and automated frameworks to ensure reliable, high-quality applications.`;
         case 'skills':
           return (
             <div>
-              <p className="mb-1 text-yellow-400">CORE STACK:</p>
-              <p>• Flutter / Dart</p>
-              <p>• React / TypeScript</p>
-              <p>• Firebase / Node.js</p>
-              <p>• Blockchain (Aptos/Move)</p>
+              <p className="mb-1 text-yellow-400">TESTING STACK:</p>
+              <p>• Selenium / TestNG / JUnit</p>
+              <p>• API Testing (Postman / Rest Assured)</p>
+              <p>• Automation (Cucumber / Appium)</p>
+              <p>• Performance Testing (JMeter)</p>
             </div>
           );
         case 'projects':
@@ -151,16 +151,13 @@ const Terminal = () => {
             <div className="flex flex-col gap-1">
               <p className="mb-1 text-purple-400">RECENT WORK:</p>
               <a href="#projects" className="text-blue-400 hover:underline">
-                1. Lakshmi Fashion Designers (LATEST)
+                1. Personal Portfolio Website (LATEST)
               </a>
               <a href="#projects" className="text-blue-400 hover:underline">
-                2. AI Voice Editor
+                2. Simple Address Book
               </a>
               <a href="#projects" className="text-blue-400 hover:underline">
-                3. SafeTrip Pro (Safety App)
-              </a>
-              <a href="#projects" className="text-blue-400 hover:underline">
-                4. AOTMS (Freelance)
+                3. Godot Plugin
               </a>
             </div>
           );
@@ -214,7 +211,7 @@ const Terminal = () => {
 
       // Greeting
       if (lower.match(/^(hi|hello|hey|greetings)/)) {
-        return "Hello! I'm Vara's virtual assistant. How can I help you today?";
+        return "Hello! I'm Pranav's virtual assistant. How can I help you today?";
       }
 
       // About
@@ -539,7 +536,7 @@ const Terminal = () => {
               aria-label="Minimize"
             />
             <span className="ml-2 text-white/60 text-xs">
-              guest@vara-portfolio:~
+              guest@pranav-portfolio:~
             </span>
           </div>
           <div className="flex items-center gap-3 text-white/40">

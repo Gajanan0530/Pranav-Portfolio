@@ -5,12 +5,16 @@ import {
   Mail,
   Heart,
   BookOpen,
+  Trophy,
+  Award,
 } from 'lucide-react';
 import { PROFILE, SOCIAL_LINKS } from '@/data/constants';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
   linkedin: Linkedin,
+  leetcode: Trophy,
+  codechef: Award,
   email: Mail,
   instagram: InstagramIcon,
   blog: BookOpen,
@@ -21,9 +25,9 @@ const Finale = () => {
 
   const marqueeTags = [
     `${PROFILE.shortName} 🚀`,
-    'Full Stack Dev | Flutter | React | Blockchain | AI',
-    'Designing clean UI/UX + Smart solutions🔖',
-    'Exploring tech through Vibe Coding',
+    'QA Test Engineer | Automation Tester | Test Architect',
+    'Ensuring Quality + Building Reliable Solutions 🧪',
+    'Testing tech through Quality Assurance',
   ];
 
   return (

@@ -6,105 +6,48 @@ import { playHover, playClick } from '@/hooks/useSoundEffects';
 
 const projects = [
   {
-    title: 'Lakshmi Fashion Designers',
+    title: 'Personal Portfolio Website',
     isNew: true,
     description:
-      'A premium e-commerce portal for a modern tailoring and fancy store, featuring multi-language support (English & Telugu) and AI-powered product collections.',
+      'A modern, interactive portfolio website built with React and TypeScript, featuring a neo-brutalist design, matrix rain animation, and comprehensive sections showcasing skills and projects.',
     tags: [
       'React',
       'TypeScript',
-      'Tailwind',
-      'Node.js',
-      'Express',
-      'Supabase',
-      'Python',
-      'FastAPI',
-      'Framer Motion',
-      'i18n',
-    ],
-    githubUrl:
-      'https://github.com/VARA4u-tech/Lakshmi-Fashion-Designers-E-Commerce-Website',
-    liveUrl:
-      'https://github.com/VARA4u-tech/Lakshmi-Fashion-Designers-E-Commerce-Website',
-  },
-  {
-    title: 'AI Voice Editor',
-    description:
-      'AI-driven document editor that uses real-time voice commands to edit and reshape text.',
-    tags: [
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'AI',
-      'Speech Recognition',
       'Vite',
-      'Supabase',
-    ],
-    githubUrl: 'https://github.com/VARA4u-tech/AI-Voice-Editor',
-    liveUrl: 'https://ai-voice-editor-4rpa.vercel.app',
-  },
-  {
-    title: 'SafeTrip Pro',
-    description:
-      'AI-powered safety navigation featuring drowsiness detection and real-time emergency alerts.',
-    tags: [
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'Supabase',
-      'Framer Motion',
-      'Vite',
-    ],
-    githubUrl:
-      'https://github.com/VARA4u-tech/safe-trip-smart-driving-safety-application',
-    liveUrl: 'https://safe-trip-smart-driving-safety-appl.vercel.app',
-  },
-  {
-    title: 'Academy of Tech Masters (AOTMS)',
-    description:
-      'Tech education platform with AI assistance and interactive student management for real-world clients.',
-    tags: [
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'Vite',
-      'Zustand',
+      'Tailwind CSS',
+      'Shadcn UI',
       'Framer Motion',
     ],
-    githubUrl: 'https://github.com/VARA4u-tech/AOTMS',
-    liveUrl: 'https://aotms.in',
+    githubUrl: null, // Not public yet
+    liveUrl: null, // Not deployed yet
   },
   {
-    title: 'Elara Cosmetics',
+    title: 'Simple Address Book',
     description:
-      'Luxury Ayurvedic e-commerce platform featuring a custom WhatsApp-integrated checkout system.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Shadcn UI', 'Vitest'],
-    githubUrl:
-      'https://github.com/VARA4u-tech/Elara-Cosmetics-E--Commerce-Website-',
-    liveUrl: 'https://elara-cosmetics.vercel.app/',
-  },
-  {
-    title: 'EduPredict',
-    description:
-      'AI predictive analytics for student success with a unique comic book-inspired interface.',
+      'A Qt-based address book application featuring hash-table architecture for O(1) average lookup time, achieving 60% faster search efficiency. Includes robust add/update/delete operations with validation to reduce data-entry errors by 30%, and a clean, responsive GUI for improved user experience.',
     tags: [
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'Vite',
-      'Lucide React',
-      'Framer Motion',
+      'C++',
+      'Qt',
+      'Hash Table',
+      'GUI',
+      'Data Structures',
+      'O(1) Lookup',
     ],
-    githubUrl: 'https://github.com/VARA4u-tech/EduPredict',
-    liveUrl: 'https://edu-pridect.vercel.app/',
+    githubUrl: null,
+    liveUrl: null,
   },
   {
-    title: 'SmartQuack',
+    title: 'Godot Plugin',
     description:
-      'Gamified task manager featuring a reactive duck mascot that tracks your productivity progress.',
-    tags: ['Flutter', 'Riverpod', 'Firebase', 'Hive', 'Dart'],
-    githubUrl: 'https://github.com/VARA4u-tech/my-first-flutter-app',
-    liveUrl: 'https://github.com/VARA4u-tech/my-first-flutter-app',
+      'A custom plugin for the Godot game engine that extends functionality and provides additional tools for game development.',
+    tags: [
+      'Godot',
+      'GDScript',
+      'Game Development',
+      'Plugin',
+    ],
+    githubUrl: 'https://github.com/GadagammaPranav/godot-plugin',
+    liveUrl: null,
   },
 ];
 
@@ -143,26 +86,30 @@ const ProjectsSection = () => (
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-black/10">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={playClick}
-              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white rounded-none"
-            >
-              <Github className="w-3.5 h-3.5" />
-              Source
-            </a>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={playClick}
-              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white rounded-none"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              Live Demo
-            </a>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white rounded-none"
+              >
+                <Github className="w-3.5 h-3.5" />
+                Source
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={playClick}
+                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-white text-[10px] font-black uppercase tracking-wider transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white rounded-none"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Live Demo
+              </a>
+            )}
           </div>
         </div>
       ))}
@@ -170,7 +117,7 @@ const ProjectsSection = () => (
 
     <div className="mt-12 flex justify-center md:justify-start">
       <a
-        href="https://github.com/VARA4u-tech"
+        href="https://github.com/GadagammaPranav"
         target="_blank"
         rel="noopener noreferrer"
         onClick={playClick}

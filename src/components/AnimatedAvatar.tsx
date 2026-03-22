@@ -4,7 +4,7 @@ const AnimatedAvatar = () => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 shrink-0 group">
+    <div className="relative w-56 h-56 md:w-80 md:h-80 mx-auto md:mx-0 shrink-0 group">
       {/* Brutalist offset shadow */}
       <div className="absolute inset-0 border-2 border-black translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-300" />
 

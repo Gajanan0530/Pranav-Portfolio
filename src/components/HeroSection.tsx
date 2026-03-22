@@ -7,20 +7,24 @@ import {
   ChevronDown,
   InstagramIcon,
   BookOpen,
+  Trophy,
+  Award,
 } from 'lucide-react';
 import Magnetic from './Magnetic';
 import { PROFILE, SOCIAL_LINKS } from '@/data/constants';
 
 const roles = [
-  'Flutter Developer',
-  'React Engineer',
-  'Blockchain Builder',
-  'Full-Stack Creator',
+  'QA Test Engineer',
+  'Automation Tester',
+  'Test Architect',
+  'Quality Assurance Lead',
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
   linkedin: Linkedin,
+  leetcode: Trophy,
+  codechef: Award,
   instagram: InstagramIcon,
   blog: BookOpen,
   email: Mail,
@@ -170,12 +174,8 @@ const HeroSection = () => {
           className="heading-brutal leading-[0.85]"
           style={{ fontSize: 'clamp(65px, 13vw, 140px)' }}
         >
-          <div className="glitch-text" data-text="Durga Vara">
-            Durga Vara
-          </div>
-          <br />
-          <div className="glitch-text" data-text="Prasad.">
-            <span className="text-foreground/20">Prasad.</span>
+          <div className="glitch-text" data-text="Pranav">
+            Pranav
           </div>
         </h1>
 
@@ -202,12 +202,16 @@ const HeroSection = () => {
         {/* Tech tags */}
         <div className="flex flex-wrap gap-2 justify-center mt-8 max-w-md mx-auto">
           {[
-            'Flutter',
-            'React',
-            'TypeScript',
-            'Firebase',
-            'Blockchain',
-            'Node.js',
+            'Test Automation',
+            'API Testing',
+            'Selenium',
+            'JUnit & TestNG',
+            'CI/CD (Jenkins)',
+            'Test Strategy',
+            'Performance Testing',
+            'Security Testing',
+            'BDD (Cucumber)',
+            'Test Documentation',
           ].map((tech) => (
             <span
               key={tech}
@@ -245,8 +249,8 @@ const HeroSection = () => {
         <div className="mt-10">
           <Magnetic strength={0.1}>
             <a
-              href="/resume.pdf"
-              download="Durga_Vara_Prasad_Resume.pdf"
+              href="/CV pdf.pdf"
+              download="Pranav_Resume.pdf"
               onClick={playClick}
               className="group relative inline-flex items-center gap-2 px-8 py-4 border-2 border-black bg-black text-white text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] hover:bg-white hover:text-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none"
             >
@@ -267,8 +271,8 @@ const HeroSection = () => {
       {/* Bottom-right stats */}
       <div className="absolute bottom-10 right-6 md:right-10 z-10 hidden md:block">
         <div className="font-mono text-xs text-foreground text-right leading-relaxed font-medium">
-          <p>const experience = "2+ years";</p>
-          <p>const projects = 10;</p>
+          <p>const experience = "2 years";</p>
+          <p>const projects = 3;</p>
           <p>const passion = Infinity;</p>
         </div>
       </div>

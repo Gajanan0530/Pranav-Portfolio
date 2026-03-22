@@ -3,29 +3,31 @@ import { playPop, playSuccess, playClick } from '@/hooks/useSoundEffects';
 import SectionBlock from './SectionBlock';
 import {
   Mail,
-  Copy,
-  Check,
   Github,
   Linkedin,
   InstagramIcon,
   BookOpen,
   Send,
   LucideGlobe2,
+  Trophy,
+  Award,
 } from 'lucide-react';
 import { PROFILE, SOCIAL_LINKS } from '@/data/constants';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
   linkedin: Linkedin,
+  leetcode: Trophy,
+  codechef: Award,
   instagram: InstagramIcon,
   blog: BookOpen,
+  email: Mail,
 };
 
-const contactSocials = SOCIAL_LINKS.filter((l) => l.id !== 'email');
+const contactSocials = SOCIAL_LINKS;
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,11 +38,8 @@ const ContactSection = () => {
     window.open(`https://t.me/${telegramNumber}?text=${encodedText}`, '_blank');
   };
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(PROFILE.email);
-    playPop();
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const composeEmail = () => {
+    window.open('mailto:pranav.gadagamma@gmail.com', '_blank');
   };
 
   return (
@@ -66,16 +65,12 @@ const ContactSection = () => {
                 <p className="font-mono text-sm break-all">{PROFILE.email}</p>
               </div>
               <button
-                onClick={copyEmail}
+                onClick={composeEmail}
                 className="p-2 hover:bg-black/5 rounded-none transition-colors relative"
-                title="Copy email"
-                aria-label={copied ? 'Email copied' : 'Copy email address'}
+                title="Compose email"
+                aria-label="Compose email to pranav.gadagamma@gmail.com"
               >
-                {copied ? (
-                  <Check className="w-4 h-4 text-green-600" />
-                ) : (
-                  <Copy className="w-4 h-4 text-foreground/40" />
-                )}
+                <Mail className="w-4 h-4 text-foreground/40" />
               </button>
             </div>
 
@@ -108,9 +103,12 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                     onClick={playClick}
                     aria-label={link.label}
-                    className="p-3 border border-foreground/20 hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95 touch-manipulation rounded-none"
+                    className="group flex flex-col items-center p-3 border border-foreground/20 hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95 touch-manipulation rounded-none"
                   >
                     <Icon className="w-5 h-5" />
+                    <span className="mt-2 text-sm font-mono uppercase tracking-widest font-medium">
+                      {link.label}
+                    </span>
                   </a>
                 );
               })}

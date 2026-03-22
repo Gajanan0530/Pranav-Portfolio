@@ -3,41 +3,41 @@
 // ──────────────────────────────────────
 
 export const PROFILE = {
-  name: 'Pappuri Durga Vara Prasad',
-  shortName: 'Durga Vara Prasad',
-  alias: 'Vara',
-  title: 'Full Stack Developer',
-  email: 'pappuridurgavaraprasad4pl@gmail.com',
-  phone: '+919550533315',
-  website: 'www.prasad.dev',
-  blogHost: 'durgavaraprasad.hashnode.dev',
+  name: 'Pranav',
+  shortName: 'Pranav',
+  alias: 'Pranav',
+  title: 'Your Professional Title',
+  email: 'pranav.gadagamma@gmail.com',
+  phone: '+1234567890',
+  website: 'www.pranav.dev',
+  blogHost: 'www.prasad.dev',
 } as const;
 
 export const SOCIAL_LINKS = [
   {
     id: 'github',
     label: 'GitHub',
-    href: 'https://github.com/VARA4u-tech',
+    href: 'https://github.com/GadagammaPranav',
   },
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/durga-vara-prasad-pappuri-1797701b6/',
+    href: 'https://www.linkedin.com/in/pranav-g662',
   },
   {
-    id: 'instagram',
-    label: 'Instagram',
-    href: 'https://www.instagram.com/d_v_p6/',
+    id: 'leetcode',
+    label: 'LeetCode',
+    href: 'https://leetcode.com/u/pranav_7701/',
   },
   {
-    id: 'blog',
-    label: 'Blog',
-    href: 'https://durgavaraprasad.hashnode.dev/',
+    id: 'codechef',
+    label: 'CodeChef',
+    href: 'https://www.codechef.com/users/pranav_0067',
   },
   {
     id: 'email',
     label: 'Email',
-    href: 'mailto:pappuridurgavaraprasad4pl@gmail.com',
+    href: 'mailto:pranav.gadagamma@gmail.com',
   },
 ] as const;
 
